@@ -1,10 +1,21 @@
 ﻿
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"ng-app="FortuneCookieService">
 <head>
     <title></title>
-
+    <script src="~/lib/angular/angular.js"></script>
+    <script src="~/ngApp/app.js"></script>
 </head>
 <body>
-    hello world!
+   <div ng-controller="CookieController as controller">
+       <button ng-click="controller.fortune">Know your fortune</button>
+       <p>{{controller.tell }} </p>
+   </div>
+
+    <div>
+        <input ng-model="num1" type="number" /> +
+        <input ng-model="num2" type="number" /> =
+        <span>{{num1 + num2 }}</span>
+
+    </div>
 </body>
 </html>
