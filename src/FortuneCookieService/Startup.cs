@@ -106,7 +106,8 @@ namespace FortuneCookieService
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{*path}",
+                defaults: new { controller = "Home", action = "Index" });
             });
         }
 

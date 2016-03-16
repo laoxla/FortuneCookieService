@@ -2,7 +2,22 @@
 //Create a service that randomly returns one of three fortunes (for example, "Your luck is about to change!"). Use service with a controller and view to display the fortune.
 var FortuneCookieService;
 (function (FortuneCookieService) {
-    angular.module("FortuneCookieService", []);
+    angular.module("FortuneCookieService", ["ui.router"])
+        .config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
+        $stateProvider
+            .state("Home", {
+            url: "/",
+            templateUrl: "/ngApp/fortuneCookieService.html",
+            controller: CookieController,
+            controllerAs: "controller"
+        })
+            .state("Calculator", {
+            url: "/calc",
+            templateUrl: "/ngApp/calc.html",
+        });
+        $urlRouterProvider.otherwise("/");
+        $locationProvider.html5Mode(true);
+    });
     var CookieController = (function () {
         //public fortune;...
         function CookieController(FortuneService) {
@@ -30,7 +45,7 @@ var FortuneCookieService;
                     return "You might not want to get out of bed today!";
                 }
                 else {
-                    return "You future is cloudy!";
+                    return "Your future is cloudy!";
                 }
             };
         }

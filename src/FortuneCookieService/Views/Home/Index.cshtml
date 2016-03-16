@@ -3,10 +3,12 @@
 <head>
     <title></title>
     <script src="~/lib/angular/angular.js"></script>
+    <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="~/ngApp/app.js"></script>
+    <base href="/" />
 </head>
 <body>
-   <div ng-controller="CookieController as controller">
+   @*<div ng-controller="CookieController as controller">
        <button ng-click="controller.fortune">Know your fortune</button>
        <p>{{controller.tell }} </p>
    </div>
@@ -16,6 +18,9 @@
         <input ng-model="num2" type="number" /> =
         <span>{{num1 + num2 }}</span>
 
-    </div>
+    </div>*@
+    <a ui-sref="Home">Fortune Cookies</a>
+    <a ui-sref="Calculator">calc</a>
+    <ui-view></ui-view>
 </body>
 </html>

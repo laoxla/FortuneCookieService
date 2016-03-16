@@ -1,0 +1,5 @@
+{
+  "ambientDependencies": {
+    "angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20160112161118"
+  }
+}
